@@ -8,11 +8,14 @@ from django.shortcuts import render
 def inicio(request):
     return render(request, 'inicio.html', {'poll': 'hola'})
 
-def servicios(request):
-    return render(request, 'servicios.html', {'poll': 'hola'})
+def actividades(request):
+    return render(request, 'actividades.html', {'poll': 'hola'})
 
-def clientes(request):
-    return render(request, 'clientes.html', {'poll': 'hola'})
+def testimonios(request):
+    return render(request, 'testimonios.html', {'poll': 'hola'})
+
+def blog(request):
+    return render(request, 'blog.html', {'poll': 'hola'})
 
 def contacto(request):
     return render(request, 'contacto.html', {'poll': 'hola'})
