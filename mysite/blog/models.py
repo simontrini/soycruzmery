@@ -5,6 +5,7 @@ from django.db import models
 
 # Create your models here.
 from django.contrib.auth.models import User
+from django.template.defaultfilters import slugify
 
 
 STATUS = (
@@ -28,3 +29,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.titulo)
+        super(Post, self).save(*args, **kwargs)

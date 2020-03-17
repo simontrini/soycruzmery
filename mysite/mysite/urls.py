@@ -22,12 +22,16 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^summernote/', include('django_summernote.urls')),
+    url(r'^blog/', include('blog.urls')),
     url(r'^$', views.inicio, name='inicio'),
     #url(r'^home/', include('home.urls'))
     url(r'^actividades/', views.actividades, name='actividades'),
     url(r'^testimonios/', views.testimonios, name='testimonios'),
-    url(r'^blog/', views.blog, name='blog'),
+    #url(r'^blog/', views.blog, name='blog'),
     url(r'^contacto/', views.contacto, name='contacto'),
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+#urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
