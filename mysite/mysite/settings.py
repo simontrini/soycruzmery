@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'inicio',
     'blog',
+    'actividades',
     'django_summernote',
 ]
 
