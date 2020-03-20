@@ -15,12 +15,12 @@ STATUS = (
 
 class Actividad(models.Model):
     titulo = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(editable=False, max_length=200, unique=True)
+    slug = models.SlugField(editable=True, max_length=200, unique=True)
     contenido = models.TextField()
     tipo = models.TextField()
     fecha = models.DateTimeField(auto_now_add=False)
     status = models.IntegerField(choices=STATUS, default=1)
-    image = models.ImageField(upload_to="actividad", null=True, blank=True,
+    image = models.ImageField(upload_to="actividades", null=True, blank=True,
         verbose_name="Imagen")
 
     class Meta:

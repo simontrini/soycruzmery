@@ -7,19 +7,17 @@
         <!--<div class="col-md-4 mt-3 col-lg-4 left">-->
         {% autoescape off %}
             {% for actividad in object_list %}
-                <div class="col-md-3 col-lg-3">
-                    <!--<div class="card mb-4">-->
-                    <div class="card h-100" style="width: 18rem;">
-                        <img class="img-thumbnail h-30" src="{{ actividad.image.url}}" class="" alt="{{ actividad.titulo }}" >
-                        <div class="card-body">
-                            <h2 class="card-title">{{ actividad.titulo }}</h2>
-                            <p class="card-text text-muted h6">| {{ actividad.fecha}} </p>
+                <div class="col-md-3 col-lg-4" >
+                        <div class="card h-10" >
+                            <img class="card-img-top img-thumbnail" src="{{ actividad.image.url}}" alt="Conoce el Ho'oponopono">
+                            <div class="card-body">
+                            <p class="card-title h2">{{ actividad.titulo }}</p>
+                            <p class="card-text h5">{{ actividad.tipo }}</p>
+                            <p class="card-text text-muted h5">| {{ actividad.fecha}} </p>
                             <p class="card-text">{{actividad.contenido|slice:":300" }}</p>
                             <a href="{{ actividad.slug }}" class="btn btn-primary">Leer mas</a>
                         </div>
                     </div>
-
-                </div>
             {% endfor %}
         {% endautoescape %}
         </div>

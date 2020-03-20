@@ -24,7 +24,8 @@ urlpatterns = [
     url(r'^summernote/', include('django_summernote.urls')),
     url(r'^blog/', include('blog.urls')),
     url(r'^actividades/', include('actividades.urls')),
-    url(r'^$', views.inicio, name='inicio'),
+    #url(r'^$', views.inicio, name='inicio'),
+    url(r'^$', views.inicio.as_view(), name='inicio'),
     #url(r'^home/', include('home.urls'))
     #url(r'^actividades/', views.actividades, name='actividades'),
     url(r'^testimonios/', views.testimonios, name='testimonios'),

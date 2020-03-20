@@ -9,9 +9,9 @@ from .models import Actividad
 
 class ActividadList(generic.ListView):
     model = Actividad
-    template_name = 'listaDeActividades.html
+    template_name = 'listaDeActividades.html'
 
 
 class ActividadDetail(generic.DetailView):
     model = Actividad
-    template_name = 'detalleDePost.html'
+    template_name = 'detalleDeActividades.html'

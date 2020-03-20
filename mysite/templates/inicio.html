@@ -24,30 +24,27 @@
             <h2 class="text-white ">
                 Próximamente.
             </h2>
-            <div class="col-md-8 col-lg-8 container-fluid">
-                <div class="card h-30" >
-                  <img class="card-img-top" src="{% static "imagenes/hooponopono1.jpeg" %}" alt="Conoce el Ho'oponopono">
-                  <div class="card-body">
-                    <p class="card-title">Conoce el Ho'oponopono</p>
-                    <p class="card-text">Reto de 7 días.</p>
+            {% autoescape off %}
+                {% for actividad in object_list %}
+                    <div class="col-md-8 col-lg-8 container-fluid">
+                        <div class="card h-30" >
+                          <img class="card-img-top" src="{{ actividad.image.url}}" alt="Conoce el Ho'oponopono">
+                          <div class="card-body">
+                            <p class="card-title">{{ actividad.titulo }}</p>
+                            <p class="card-text h6">{{ actividad.tipo }}</p>
+                            <p class="card-text text-muted h6">| {{ actividad.fecha}} </p>
+                            <p class="card-text">{{actividad.contenido|slice:":200" }}</p>
+                            <a href="actividades/{{ actividad.slug }}" class="btn btn-primary">Leer mas</a>
 
-                  </div>
-                </div>
-            </div>
-
-            <div class="col-md-8 col-lg-8 container-fluid">
-                <div class="card h-30" >
-                  <img class="card-img-top" src="{% static "imagenes/hooponopono1.jpeg" %}" alt="Conoce el Ho'oponopono">
-                  <div class="card-body">
-                    <h5 class="card-title">Conoce el Ho'oponopono</h5>
-                    <p class="card-text">Reto de 7 días.</p>
-
-                  </div>
-                </div>
-            </div>
+                          </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endautoescape %}
 
     </div>
 </div>
+<!--
 <div class="row bg-primary justify-content-md-center ">
         <div class="col-mb-4">
                 <div class="card md-4 h-100 w-100" style="max-width: 18rem; max-height: 25rem;">
@@ -91,7 +88,7 @@
                   </div>
                 </div>
             </div>
-    </div>
+    </div>  -->
 
 <div class="row">
     <div class="col-md-8 col-lg-12 text-center img-fluid img-thumbnail bg-primary">
