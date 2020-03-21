@@ -9,6 +9,7 @@ from actividades.models import Actividad
 class inicio(generic.ListView):
     model = Actividad
     template_name = 'inicio.html'
+    queryset = Actividad.objects.filter(status='1')
 
 #def inicio(request):
 #    return render(request, 'inicio.html', {'poll': 'hola'})

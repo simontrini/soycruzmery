@@ -10,7 +10,8 @@ from django.template.defaultfilters import slugify
 
 STATUS = (
     (0,"Cerrado"),
-    (1,"Activo")
+    (1,"Activo"),
+    (2,"Editando")
 )
 
 class Actividad(models.Model):

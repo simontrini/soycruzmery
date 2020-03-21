@@ -10,8 +10,9 @@ from .models import Post
 class PostList(generic.ListView):
     print("hola mundo")
     model = Post
-    #queryset = Post.objects.filter(status=1).order_by('-creado_on')
+    queryset = Post.objects.filter(status=1).order_by('-creado_on')
     template_name = 'listaDePost.html'
+    #queryset = Post.objects.filter(status='1')
 
 
 class PostDetail(generic.DetailView):
