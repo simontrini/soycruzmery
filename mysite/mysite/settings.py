@@ -37,10 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'inicio',
     'blog',
     'actividades',
     'django_summernote',
+    'django_comments',
+    'telegrambot',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -131,4 +135,12 @@ STATIC_ROOT = u'/home/soycruzmery/mysite/static'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+SITE_ID = 1
+TELEGRAM_BOT_HANDLERS_CONF = "actividades.handlers"
+TELEGRAM_BOT_TOKEN_EXPIRATION = "2" # tow hours before a token expires
+
+TELEGRAM = {
+    'bot_token': '1151602273:AAEDZTu8t1tcOM5pWDF6Yk4BDih_sw_L7aQ',
+    'channel_name': 'SoyCruzMeryCanal',
+}
 

@@ -10,6 +10,7 @@ from .models import Actividad
 class ActividadList(generic.ListView):
     model = Actividad
     template_name = 'listaDeActividades.html'
+    queryset = Actividad.objects.filter(status='1')
 
 
 class ActividadDetail(generic.DetailView):

@@ -18,10 +18,13 @@ from django.contrib import admin
 from inicio import views
 from django.conf import settings
 from django.conf.urls.static import static
+#from actividades.commands_views import StartView, AuthorCommandView, AuthorInverseListView, AuthorCommandQueryView, UnknownView, AuthorName, MessageView
+#from telegrambot.handlers import command, unknown_command, regex, message
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^summernote/', include('django_summernote.urls')),
+    url(r'^telegrambot/', include('telegrambot.urls', namespace="telegrambot")),
     url(r'^blog/', include('blog.urls')),
     url(r'^actividades/', include('actividades.urls')),
     #url(r'^$', views.inicio, name='inicio'),
@@ -31,9 +34,11 @@ urlpatterns = [
     url(r'^testimonios/', views.testimonios, name='testimonios'),
     #url(r'^blog/', views.blog, name='blog'),
     url(r'^contacto/', views.contacto, name='contacto'),
+    url(r'^comments/',include('django_comments.urls')),
 
 ]
 
 #urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+#https://api.telegram.org/bot1151602273:AAEDZTu8t1tcOM5pWDF6Yk4BDih_sw_L7aQ/setWebHook?url=https://soycruzmery.pythonanywhere.com/telegrambot/webhook/1151602273:AAEDZTu8t1tcOM5pWDF6Yk4BDih_sw_L7aQ/
